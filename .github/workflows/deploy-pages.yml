@@ -28,7 +28,7 @@ jobs:
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
       - name: Instalar dependencias
-        run: npm ci
+        run: npm ci --no-audit --no-fund
       - name: Revisar código
         run: npm run lint
       - name: Generar sitio estático
