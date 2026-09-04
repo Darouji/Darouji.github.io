@@ -6,8 +6,8 @@ const projects = [
     category: "CASO DE ESTUDIO · FULL STACK",
     copy: "Una plataforma para conectar inventario, compras, ventas, contactos y trazabilidad en un mismo flujo.",
     tags: ["React", "TypeScript", "Django", "PostgreSQL"],
-    githubUrl: "https://github.com/Darouji/Darouji.github.io#proyectos",
-    githubLabel: "Ver presentación en GitHub",
+    githubUrl: "",
+    githubLabel: "",
     kind: "erp",
   },
   {
@@ -30,6 +30,24 @@ const process = [
   { number: "04", title: "Comprobar", text: "Probar comportamientos, revisar cambios y documentar límites antes de dar algo por terminado." },
 ];
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Fabián García Ríos",
+  url: "https://darouji.github.io/",
+  sameAs: [
+    "https://github.com/Darouji",
+    "https://www.linkedin.com/in/fabian-garcia-55641333b/",
+  ],
+  jobTitle: "Desarrollador junior frontend y full stack",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Antofagasta",
+    addressCountry: "CL",
+  },
+  knowsAbout: ["React", "TypeScript", "Python", "Django", "Flutter", "Firebase", "Análisis funcional"],
+};
+
 function GitHubIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="icon">
@@ -45,6 +63,10 @@ function ArrowIcon() {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
 
       <header className="site-header">
@@ -104,7 +126,7 @@ export default function Home() {
           <div className="project-list">
             {projects.map((project) => (
               <article className="project-card" id={project.id} key={project.id}>
-                <div className={`project-visual ${project.kind}`} aria-label={`Representación conceptual de ${project.name}`}>
+                <div className={`project-visual ${project.kind}`} role="img" aria-label={`Representación conceptual de ${project.name}`}>
                   <div className="visual-grid" aria-hidden="true" />
                   {project.kind === "erp" ? (
                     <div className="erp-screen">
@@ -137,22 +159,26 @@ export default function Home() {
                   <h3>{project.name}</h3>
                   <p>{project.copy}</p>
                   <div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  <div className="project-actions">
-                    <a className="github-link" href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`${project.githubLabel}: ${project.name}`}>
-                      <GitHubIcon /><span>{project.githubLabel}</span><ArrowIcon />
-                    </a>
-                  </div>
+                  {project.githubUrl && project.githubLabel ? (
+                    <div className="project-actions">
+                      <a className="github-link" href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`${project.githubLabel}: ${project.name}`}>
+                        <GitHubIcon /><span>{project.githubLabel}</span><ArrowIcon />
+                      </a>
+                    </div>
+                  ) : (
+                    <p className="project-privacy">Caso anonimizado · código no publicado</p>
+                  )}
                   <details className="case-study">
                     <summary>Leer el caso completo <span aria-hidden="true">+</span></summary>
                     {project.kind === "erp" ? (
                       <div className="case-body">
-                        <span className="case-status">CASO ANONIMIZADO · CÓDIGO PRIVADO</span>
+                        <span className="case-status">CASO ANONIMIZADO · CÓDIGO NO PUBLICADO</span>
                         <h4>Unir la operación y conservar la trazabilidad.</h4>
                         <p>Durante mi práctica profesional diseñé un MVP para reunir procesos que se gestionaban por separado: contactos, inventario, compras, ventas y documentación.</p>
                         <h5>MI APORTE</h5>
                         <p>Levantamiento de requerimientos, diseño de flujos, desarrollo de API e interfaz, componentes reutilizables y validación del comportamiento.</p>
                         <ul><li>Kardex y auditoría para seguir movimientos y cambios.</li><li>Transacciones e idempotencia en operaciones críticas.</li><li>Filtros y paginación procesados en servidor.</li></ul>
-                        <p className="case-note">El repositorio público documenta arquitectura y aprendizajes sin exponer código, datos ni material de terceros.</p>
+                        <p className="case-note">Esta presentación resume el alcance y los aprendizajes sin exponer código, datos ni material de terceros.</p>
                       </div>
                     ) : (
                       <div className="case-body">

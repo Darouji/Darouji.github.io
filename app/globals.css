@@ -331,6 +331,7 @@ h2 { margin: 0; font-size: clamp(36px, 4vw, 54px); font-weight: 560; line-height
 .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 23px; }
 .tags span { padding: 6px 9px; color: #84979e; border: 1px solid var(--line); background: rgba(255,255,255,.012); font-family: var(--font-mono); font-size: 8px; }
 .project-actions { margin-top: 26px; }
+.project-privacy { margin: 26px 0 0; color: #71858c; font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
 .github-link { width: max-content; display: inline-flex; align-items: center; gap: 10px; padding-bottom: 8px; color: var(--cyan); border-bottom: 1px solid rgba(88,238,230,.45); font-family: var(--font-mono); font-size: 10px; }
 .github-link .icon { width: 17px; }
 .case-study { margin-top: 25px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -404,7 +405,7 @@ h2 { margin: 0; font-size: clamp(36px, 4vw, 54px); font-weight: 560; line-height
 .contact-links strong { overflow-wrap: anywhere; font-size: 12px; font-weight: 500; }
 
 footer { border-top: 1px solid var(--line); background: #05070b; }
-.footer-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 25px; color: #60747c; font-family: var(--font-mono); font-size: 8px; letter-spacing: .05em; }
+.footer-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 25px; color: #71858c; font-family: var(--font-mono); font-size: 8px; letter-spacing: .05em; }
 .footer-inner a:hover { color: var(--cyan); }
 
 @media (max-width: 1050px) {
@@ -450,7 +451,7 @@ footer { border-top: 1px solid var(--line); background: #05070b; }
   .site-header { backdrop-filter: blur(13px); }
   .header-github span:not(.arrow) { display: none; }
   .hero { padding-block: 52px 62px; gap: 44px; }
-  .hero h1 { font-size: clamp(41px, 12vw, 58px); }
+  .hero h1 { font-size: clamp(35px, 11vw, 50px); }
   .hero-description { font-size: 15px; }
   .hero-actions, .about-actions { align-items: stretch; flex-direction: column; }
   .button { width: 100%; }

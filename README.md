@@ -2,9 +2,13 @@
 
 Portafolio profesional de Fabián García Ríos, Técnico en Computación e Informática con mención en Programación, enfocado en desarrollo frontend, full stack y análisis funcional.
 
+[Ver portafolio publicado](https://darouji.github.io/)
+
+![Vista previa del portafolio FG.](public/og-cyberpunk.png)
+
 ## Proyectos
 
-- **Nexo ERP/CRM:** caso de estudio anonimizado de un MVP para conectar inventario, compras, ventas, contactos y trazabilidad. El código original permanece privado por precaución respecto de datos, confidencialidad y titularidad.
+- **Nexo ERP/CRM:** caso de estudio anonimizado de un MVP para conectar inventario, compras, ventas, contactos y trazabilidad. El código y la documentación originales no se publican por precaución respecto de datos, confidencialidad y titularidad.
 - **Clarity Software:** prototipo académico en Flutter y Firebase. [Ver repositorio](https://github.com/Darouji/Clarity_Software).
 
 ## Desarrollo local
