@@ -7,6 +7,14 @@ updates:
       day: "monday"
       timezone: "America/Santiago"
     open-pull-requests-limit: 3
+    groups:
+      javascript-dependencies:
+        patterns:
+          - "*"
+    ignore:
+      - dependency-name: "@types/node"
+        update-types:
+          - "version-update:semver-major"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -14,3 +22,7 @@ updates:
       day: "monday"
       timezone: "America/Santiago"
     open-pull-requests-limit: 3
+    groups:
+      github-actions:
+        patterns:
+          - "*"
